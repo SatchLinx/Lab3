@@ -26,5 +26,11 @@ def test_bubble_sort_invalid():
     input_arr = [64, 34, 25, 12, 22, 11, 90]
 
     result = Lab3.bubble_sort(input_arr, 3)
+    assert (result == 1 or result == [])
 
-    assert (result == [])
+def test_bubble_sort_not_an_int():
+    result = []
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 3.14]
+
+    result = Lab3.bubble_sort(input_arr, 1)
+    assert (result == 2)

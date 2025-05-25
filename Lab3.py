@@ -10,6 +10,9 @@ def bubble_sort(arr, sorting_order):
     arr_result = arr.copy()
 
     # Get number of elements in the list
+    for item in arr:
+        if not isinstance(item,int):
+            return 2
     n = len(arr_result)
 
     if n < 10:
@@ -17,8 +20,10 @@ def bubble_sort(arr, sorting_order):
         for i in range(n - 1):
             # range(n) also work but outer loop will
             # repeat one time more than needed.
-
             # Last i elements are already in place
+
+
+
             for j in range(0, n - i - 1):
 
                 if sorting_order == SORT_ASCENDING:
@@ -29,12 +34,15 @@ def bubble_sort(arr, sorting_order):
                 elif sorting_order == SORT_DESCENDING:
                     if arr_result[j] < arr_result[j + 1]:
                         arr_result[j], arr_result[j + 1] = arr_result[j + 1], arr_result[j]
-
+             
                 else:
                     # Return an empty array
                     arr_result = []
+
+    elif n == 0:
+        arr_result = 0
     else:
-        arr_result = -1
+        arr_result = 1
 
     return arr_result
 
